@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="citySelect">
+      <option>-Select City-</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Kolkata">Kolkata</option>
+    </select>
+    <p id="selectCity"></p>
+    <script>
+      document
+        .getElementById("citySelect")
+        .addEventListener("change", function () {
+          document.getElementById("selectCity").textContent =
+            "You Selected: " + this.value;
+        });
+    </script>
+  </body>
+</html>

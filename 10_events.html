@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <input
+        type="text"
+        name="username"
+        placeholder="Enter username"
+        required
+      />
+      <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+      let myForm = document.getElementById("myForm");
+      let result = document.getElementById("result");
+      myForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // prevent form from submitting to server
+        const username = e.target.username.value;
+        result.textContent = "Submitted Username: " + username;
+      });
+    </script>
+  </body>
+</html>

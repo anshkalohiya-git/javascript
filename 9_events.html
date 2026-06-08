@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event</title>
+  </head>
+  <body>
+    <form action="">
+      <h3>Focus & Blur Event</h3>
+      <label for="username">Username...</label>
+      <input type="text" id="username" />
+
+      <hr />
+      <h3>Click Event & preventDefault() method</h3>
+      <input type="text" id="myInput" required />
+      <button type="submit" id="btn">Submit</button>
+      <p id="textMsg"></p>
+
+      <hr />
+      <h3>Input Event</h3>
+      <input type="text" placeholder="Type your name.." id="nameInput" />
+      <p id="output"></p>
+
+      <script>
+        let myInput = document.getElementById("username");
+        myInput.addEventListener("focus", myFocusFunc);
+        myInput.addEventListener("blur", myBlurFunc);
+        function myFocusFunc() {
+          myInput.style.backgroundColor = "yellow";
+        }
+        function myBlurFunc() {
+          myInput.style.backgroundColor = "white";
+        }
+
+        let btn = document.getElementById("btn");
+        let textMsg = document.getElementById("textMsg");
+        btn.addEventListener("click", handleSubmit);
+        function handleSubmit(e) {
+          e.preventDefault();
+          textMsg.textContent = "Submitted Successfully..";
+        }
+
+        let nameInput = document.getElementById("nameInput");
+        let output = document.getElementById("output");
+        nameInput.addEventListener("input", function () {
+          output.textContent = "Helloo, " + nameInput.value;
+        });
+      </script>
+    </form>
+  </body>
+</html>
+<!-- 
+
+form - submit
+input - focus,blur, input,change
+dropdown - change
+-->
